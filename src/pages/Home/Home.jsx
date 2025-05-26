@@ -1,7 +1,14 @@
 import React from "react";
+import Banner from "./Banner";
+import CategoryBrowse from "./CategoryBrowse";
 
 function Home() {
-  return <div>This is Home</div>;
+  return (
+    <div>
+      <Banner />
+      <CategoryBrowse></CategoryBrowse>
+    </div>
+  );
 }
 
 export default Home;

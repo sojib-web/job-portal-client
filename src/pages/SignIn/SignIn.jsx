@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useContext } from "react";
 import Lottie from "lottie-react";
 import LoginLottie from "../../assets/Animation - 1748255523281.json";
@@ -35,7 +36,7 @@ function SignIn() {
         <div className="card w-full max-w-sm bg-white shadow-xl rounded-2xl">
           <div className="card-body px-8 py-10">
             <h1 className="text-3xl font-bold text-center mb-6 text-indigo-600">
-              Sign In
+              Sign In Now !
             </h1>
 
             <form onSubmit={handleSignIn}>

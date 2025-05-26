@@ -7,6 +7,8 @@ import "./App.css";
 import router from "./Router/Router.jsx";
 import { RouterProvider } from "react-router";
 import AuthProvider from "./Context/AuthProvider.jsx";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
