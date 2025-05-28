@@ -2,11 +2,16 @@
 import React, { useContext } from "react";
 import Lottie from "lottie-react";
 import LoginLottie from "../../assets/Animation - 1748255523281.json";
-import { NavLink } from "react-router";
+import { NavLink, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Context/AuthContext";
+import SocialLogin from "../Shared/SocialLogin";
 
 function SignIn() {
   const { signIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log("location sign in page", location);
+  const from = location.state || "/";
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -18,6 +23,7 @@ function SignIn() {
       .then((result) => {
         console.log("Login successful:", result.user);
         form.reset();
+        navigate(from);
       })
       .catch((err) => {
         console.error("Login failed:", err.message);
@@ -41,6 +47,7 @@ function SignIn() {
 
             <form onSubmit={handleSignIn}>
               <div className="form-control mb-4">
+                <SocialLogin from={from} />
                 <label className="label">
                   <span className="label-text font-medium">Email</span>
                 </label>
